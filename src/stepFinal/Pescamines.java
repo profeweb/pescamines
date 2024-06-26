@@ -2,6 +2,7 @@ package stepFinal;
 
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.sound.SoundFile;
 
 public class Pescamines extends PApplet {
 
@@ -13,6 +14,9 @@ public class Pescamines extends PApplet {
 
     // Fonts dels textos
     PFont font1, font2;
+
+    // Sons dels clicks
+    SoundFile soBomba, soClick;
 
     public void settings(){
         size(800, 800);
@@ -30,6 +34,11 @@ public class Pescamines extends PApplet {
         // Carrega la font per emprar en els textos
         font1 = createFont("KGHAPPY.ttf", 32);
         font2 = createFont("KGHAPPY.ttf", 48);
+
+        // Carrega els sons
+
+        soBomba = new SoundFile(this, "explosio.wav");
+        soClick = new SoundFile(this, "click.wav");
     }
 
     // Inicialitza el joc del pescamines
@@ -97,9 +106,11 @@ public class Pescamines extends PApplet {
             if (t.tauler[f][c].esBomba) {
                 gameOver = true;
                 t.setShowAll(true);
+                soBomba.play();
             }
             // Click sobre casella lliure
             else {
+                soClick.play();
                 t.updateTauler(f, c);
                 // Totes les caselles descobertes
                 if(t.numCasellesVisibles == t.numCasellesObrir){
