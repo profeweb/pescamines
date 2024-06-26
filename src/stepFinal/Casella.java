@@ -12,16 +12,16 @@ public class Casella {
     int numBombes;
 
     // Estats de la casella
-    boolean esBomba, visible;
+    boolean esBomba, descobert;
 
 
-
+    // Constructor
     Casella(int f, int c, boolean b) {
         this.fila = f;
         this.columna = c;
         this.numBombes = 0;
         this.esBomba = b;
-        this.visible = false;
+        this.descobert = false;
     }
 
     // Setter de la propietat esBomba
@@ -35,23 +35,28 @@ public class Casella {
     }
 
     // Setter de la propietat visible
-    void setVisible(boolean b) {
-        this.visible = b;
+    void setDescobert(boolean b) {
+        this.descobert = b;
     }
-
-
 
     // Dibuixa la casella
     void display(PApplet p5, float xc, float yc, float w, float h, boolean showAll, PImage imgTapada, PImage imgDestapada, PImage imgBomba) {
 
+        // Descobrir totes les caselles (final de joc)
         if (showAll) {
+
+            // Rectangle
             p5.fill(150); p5.strokeWeight(3);
             p5.rect(xc, yc, w, h, 5);
+
+            // Casella bomba
             if (this.esBomba == true) {
                 p5.fill(0);
                 p5.circle(xc + w / 2, yc + h / 2, w / 2);
                 p5.image(imgBomba, xc, yc, w, h);
-            } else {
+            }
+            // Casella sense bomba
+            else {
                 p5.image(imgDestapada, xc, yc, w, h);
                 p5.fill(0);
                 p5.textSize(36);
@@ -59,9 +64,12 @@ public class Casella {
                 p5.text(this.numBombes, xc + w / 2, yc + h / 2);
 
             }
-        } else {
+        }
+        // Només caselles descobertes
+        else {
 
-            if (this.visible) {
+            // Casella Descoberta
+            if (this.descobert) {
                 //p5.fill(220); p5.strokeWeight(3);
                 //p5.rect(xc, yc, w, h);
                 p5.image(imgDestapada, xc, yc, w, h);
@@ -71,6 +79,7 @@ public class Casella {
                 p5.text(this.numBombes, xc + w / 2, yc + h / 2);
 
             }
+            // Casella Tapada
             else {
                 //p5.fill(150); p5.strokeWeight(3);
                 //p5.rect(xc, yc, w, h, 5);

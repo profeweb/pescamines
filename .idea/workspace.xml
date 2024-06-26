@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad1e1386-000a-495d-ae42-5ba4d7d264e2" name="Changes" comment="" />
+    <list default="true" id="ad1e1386-000a-495d-ae42-5ba4d7d264e2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stepFinal/Casella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Casella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stepFinal/Pescamines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Pescamines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stepFinal/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Tauler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,18 +31,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tonim/Documents/Processing/libraries/sound/library",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Documents/Processing/libraries/sound/library&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Pescamines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="stepFinal.Pescamines" />
@@ -70,7 +75,8 @@
       <workItem from="1719298822708" duration="1236000" />
       <workItem from="1719310393548" duration="1321000" />
       <workItem from="1719383720621" duration="1688000" />
-      <workItem from="1719413339660" duration="4374000" />
+      <workItem from="1719413339660" duration="4498000" />
+      <workItem from="1719428118938" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1719298095982</created>
@@ -107,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719421371115</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="initial">
+      <created>1719421555315</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719421555315</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

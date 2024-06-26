@@ -94,7 +94,7 @@ public class Pescamines extends PApplet {
     public void mousePressed(){
         if (!gameOver) {
 
-            // Oté fila i columna de la casella clicada
+            // Obté fila i columna de la casella clicada
             int[] indexos = t.cellClicked(mouseX, mouseY);
             int f = indexos[0];
             int c = indexos[1];
@@ -105,7 +105,7 @@ public class Pescamines extends PApplet {
             // Click sobre casella amb bomba
             if (t.tauler[f][c].esBomba) {
                 gameOver = true;
-                t.setShowAll(true);
+                t.setDescobrirTotes(true);
                 soBomba.play();
             }
             // Click sobre casella lliure
@@ -113,9 +113,9 @@ public class Pescamines extends PApplet {
                 soClick.play();
                 t.updateTauler(f, c);
                 // Totes les caselles descobertes
-                if(t.numCasellesVisibles == t.numCasellesObrir){
+                if(t.numCasellesVisibles == t.numCasellesPerObrir){
                     winner = true;
-                    t.setShowAll(true);
+                    t.setDescobrirTotes(true);
                 }
             }
         }
