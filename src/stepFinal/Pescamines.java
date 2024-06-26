@@ -34,48 +34,74 @@ public class Pescamines extends PApplet {
 
     // Inicialitza el joc del pescamines
     void setGame(){
+
+        // Crea el tauler
         t = new Tauler(8, 10, 0, 70, width/8, (height-70)/8);
+
+        // Posiciona les bombes en el tauler
         t.setBombs(this);
+
+        // Calcula el número de bombes que envolten cada casella
         t.calculateNumbers();
+
+        // Carrega les imatges per representar les caselles
         t.setImatges(this);
+
+        // Inicialitza l'estat del joc
         gameOver = false;
         winner = false;
     }
 
     public void draw(){
         background(255);
+
+        // Dibuixa el tauler de joc
         t.display(this, font1);
+
+        // Partida acabada
         if (gameOver) {
+
             fill(50, 150); noStroke();
             rect(0, 0, width, height);
 
             fill(255);
-            textAlign(CENTER, CENTER);
+            textAlign(CENTER);
             textFont(font2);
             text("GAME OVER", width/2, height/2);
         }
+        // Guanya jugador/a
         else if(winner){
+
             fill(50, 150); noStroke();
             rect(0, 0, width, height);
 
             fill(255);
             textFont(font2);
-            textAlign(CENTER, CENTER);
+            textAlign(CENTER);
             text("YOU WIN", width/2, height/2);
         }
     }
 
     public void mousePressed(){
         if (!gameOver) {
+
+            // Oté fila i columna de la casella clicada
             int[] indexos = t.cellClicked(mouseX, mouseY);
             int f = indexos[0];
             int c = indexos[1];
+
+            // Actualitza els clicks
             t.updateClicks();
+
+            // Click sobre casella amb bomba
             if (t.tauler[f][c].esBomba) {
                 gameOver = true;
                 t.setShowAll(true);
-            } else {
+            }
+            // Click sobre casella lliure
+            else {
                 t.updateTauler(f, c);
+                // Totes les caselles descobertes
                 if(t.numCasellesVisibles == t.numCasellesObrir){
                     winner = true;
                     t.setShowAll(true);
@@ -85,6 +111,7 @@ public class Pescamines extends PApplet {
     }
 
     public void keyPressed(){
+        // Reset del joc del pescamines
         if(key == 'r' || key == 'R'){
             setGame();
         }
