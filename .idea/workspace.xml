@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1e1386-000a-495d-ae42-5ba4d7d264e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/step05/Casella.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Pescamines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Tauler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stepFinal/Pescamines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Pescamines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stepFinal/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Tauler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/step06/Casella.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/step06/Pescamines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/step06/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tonim/Documents/CODE/Pescamines/src/step05",
+    "last_opened_file_path": "C:/Users/tonim/Documents/CODE/Pescamines/src/step06",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -46,6 +45,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tonim\Documents\CODE\Pescamines\src\step06" />
       <recent name="C:\Users\tonim\Documents\CODE\Pescamines\src\step05" />
       <recent name="C:\Users\tonim\Documents\CODE\Pescamines\src\step04" />
       <recent name="C:\Users\tonim\Documents\CODE\Pescamines\src\step03" />
@@ -55,13 +55,13 @@
       <recent name="step01" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.step05.Pescamines">
-    <configuration name="step01.Pescamines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="step01.Pescamines" />
+  <component name="RunManager" selected="Application.Pescamines">
+    <configuration name="Pescamines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="step06.Pescamines" />
       <module name="Pescamines" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="step01.*" />
+          <option name="PATTERN" value="step06.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Pescamines" />
         <item itemvalue="Application.step05.Pescamines" />
         <item itemvalue="Application.step04.Pescamines" />
         <item itemvalue="Application.step03.Pescamines" />
         <item itemvalue="Application.step02.Pescamines" />
-        <item itemvalue="Application.step01.Pescamines" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +145,7 @@
       <workItem from="1719383720621" duration="1688000" />
       <workItem from="1719413339660" duration="4498000" />
       <workItem from="1719428118938" duration="9235000" />
-      <workItem from="1719475062726" duration="6965000" />
+      <workItem from="1719475062726" duration="7957000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1719298095982</created>
@@ -238,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719483857838</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="initial">
+      <created>1719484300228</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1719484300228</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
