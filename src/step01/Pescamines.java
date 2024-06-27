@@ -17,6 +17,6 @@ public class Pescamines extends PApplet {
     }
 
     public void draw(){
-        background(255);
+        background(220);
     }
 }

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1e1386-000a-495d-ae42-5ba4d7d264e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/step01/Pescamines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/step02/Casella.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/step02/Pescamines.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step01/Pescamines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step01/Pescamines.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,13 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="step02" />
+      <recent name="step01" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.step02.Pescamines">
     <configuration name="Pescamines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="stepFinal.Pescamines" />
       <module name="Pescamines" />
@@ -55,8 +63,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="step01.Pescamines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="step01.Pescamines" />
+      <module name="Pescamines" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="step01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="step02.Pescamines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="step02.Pescamines" />
+      <module name="Pescamines" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="step02.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.step02.Pescamines" />
+        <item itemvalue="Application.step01.Pescamines" />
         <item itemvalue="Application.Pescamines" />
       </list>
     </recent_temporary>
@@ -75,7 +111,7 @@
       <workItem from="1719383720621" duration="1688000" />
       <workItem from="1719413339660" duration="4498000" />
       <workItem from="1719428118938" duration="9235000" />
-      <workItem from="1719475062726" duration="1897000" />
+      <workItem from="1719475062726" duration="3942000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1719298095982</created>
@@ -140,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719475534432</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="initial">
+      <created>1719477117963</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719477117963</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
