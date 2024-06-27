@@ -177,7 +177,7 @@ public class Tauler {
         this.numCasellesVisibles++;
 
         // Comprova si ha de descobrir les caselles veïnes
-        
+
         int  minF = max(0, f-1);
         int  maxF = this.num;
 
