@@ -1,8 +1,6 @@
-package stepFinal;
+package step05;
 
 import processing.core.PApplet;
-import processing.core.PFont;
-import processing.core.PImage;
 
 import static processing.core.PApplet.floor;
 import static processing.core.PApplet.max;
@@ -28,9 +26,6 @@ public class Tauler {
     // Tauler del joc pescamines
     Casella[][] tauler;
 
-    // Imatges de casella tapada, destapada i amb bomba
-    PImage imgTapada, imgDestapada, imgBomba;
-
     // Constructor
     Tauler(int m, int nb, float x, float y, float w, float h){
 
@@ -49,21 +44,21 @@ public class Tauler {
         // Número de caselles sense bombes
         this.numCasellesPerObrir = (m*m) - nb;
 
-        // Totes les caselles tapades
+        // Totes les caselles tapades inicialment
         this.descobrirTotes = false;
 
-        // Estadístiques inicials
+        // Estadístiques inicials a zero
         this.numPoints = 0;
         this.numClicks = 0;
         this.numCasellesVisibles = 0;
 
-        // Crea les caselles del tauler
-        this.setCaselles();
     }
 
     // Crea les caselles del tauler
     void setCaselles(){
+
         this.tauler = new Casella[this.num][this.num];
+
         for(int f = 0; f<this.num; f++){
             for(int c = 0; c<this.num; c++){
                 this.tauler[f][c] = new Casella(f, c, false);
@@ -76,21 +71,26 @@ public class Tauler {
         this.descobrirTotes = b;
     }
 
-    // Setter de les propietats imgTapada, imgDestapada i imgBomba
-    void setImatges(PApplet p5){
-        this.imgTapada    = p5.loadImage("square.png");
-        this.imgDestapada = p5.loadImage("destapat.png");
-        this.imgBomba     = p5.loadImage("bomba.png");
-    }
+    // Dibuixa el tauler de joc
+    void display(PApplet p5){
+        for(int f = 0; f<this.num; f++){
+            for(int c = 0; c<this.num; c++){
+                // Calcula la posició de la casella (fila f, columna c)
+                float xc = this.x + this.w*c;
+                float yc = this.y + this.h*f;
+                this.tauler[f][c].display(p5, xc, yc, this.w, this.h, this.descobrirTotes);
+            }
+        }
 
-    // Actualitza el número de clicks
-    void updateClicks(){
-        this.numClicks++;
+        // Estadístiques del joc
+        p5.fill(184, 147, 196);
+        p5.rect(0, 0, p5.width, this.y);
+        p5. fill(0); p5.textSize(18); p5.textAlign(p5.CENTER, p5.CENTER);
+        p5.text("POINTS: "+ this.numPoints+ " / CLICKS: "+ this.numClicks, p5.width/2, 30);
     }
-
 
     // Estableix la posició de les bombes en el tauler
-    void setBombs(PApplet p5){
+    void setBombes(PApplet p5){
         int num = 0;
         do {
             // Fila i columna aleatòries
@@ -103,27 +103,9 @@ public class Tauler {
                 num++;
             }
         } while(num<this.numBombes);
-        // Fins arribar ak número de bombes.
+        // Fins arribar al número de bombes.
     }
 
-
-    // Dibuixa el tauler de joc
-    void display(PApplet p5, PFont font){
-        for(int f = 0; f<this.num; f++){
-            for(int c = 0; c<this.num; c++){
-                // Calcula la posició de la casella (fila f, columna c)
-                float xc = this.x + this.w*c;
-                float yc = this.y + this.h*f;
-                this.tauler[f][c].display(p5, xc, yc, this.w, this.h, this.descobrirTotes, imgTapada, imgDestapada, imgBomba);
-            }
-        }
-
-        // Estadístiques del joc
-        p5.fill(184, 147, 196);
-        p5.rect(0, 0, p5.width, this.y);
-        p5. fill(0); p5.textSize(18); p5.textAlign(p5.CENTER, p5.CENTER); p5.textFont(font);
-        p5.text("POINTS: "+ this.numPoints+ " / CLICKS: "+ this.numClicks, p5.width/2, 30);
-    }
 
     // Calcula els número de bombes al voltant de les caselles
     void calculateNumbers(){
@@ -144,6 +126,7 @@ public class Tauler {
         }
     }
 
+
     // Determina quina casella (fila, columna) ha sigut clicada
     int[] casellaClickada(float mx, float my){
         int f = floor((my - this.y) / this.h);
@@ -152,21 +135,12 @@ public class Tauler {
         return indexos;
     }
 
-    // Actualitza el tauler en clickar a la fila f, columna c
-    void updateTauler(int f, int c){
-        if(!this.tauler[f][c].esBomba){
-            this.descobreix(f, c);
-        }
+    // Actualitza el número de clicks
+    void updateClicks(){
+        this.numClicks++;
     }
 
-    // Determina si una casella oculta és un zero
-    boolean esUnZeroOcult(int fc, int rc){
-        return !this.tauler[fc][rc].descobert &&
-                this.tauler[fc][rc].numBombes == 0 &&
-                !this.tauler[fc][rc].esBomba;
-    }
-
-    // Descobreix la casella (f, c) i les que l'enrevolten amb zeros
+    // Descobreix la casella (f, c)
     void descobreix(int f, int c){
 
         this.tauler[f][c].setDescobert(true);
@@ -175,20 +149,7 @@ public class Tauler {
 
         // Actualitza el número de caselles descobertes
         this.numCasellesVisibles++;
-
-        // Comprova si ha de descobrir les caselles veïnes
-
-        int  minF = max(0, f-1);
-        int  maxF = this.num;
-
-        for(int fc = minF; fc >= 0 && fc<maxF && fc <= f+1; fc++){
-            int minC = max(0, c-1);
-            int maxC = this.num;
-            for(int rc= minC; rc>=0 && rc< maxC && rc <=c+1; rc++){
-                if((fc!=f || rc!=c) && this.esUnZeroOcult(fc, rc)){
-                    this.descobreix(fc, rc);
-                }
-            }
-        }
     }
+
+
 }

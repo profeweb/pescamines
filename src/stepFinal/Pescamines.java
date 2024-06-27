@@ -95,7 +95,7 @@ public class Pescamines extends PApplet {
         if (!gameOver) {
 
             // Obté fila i columna de la casella clicada
-            int[] indexos = t.cellClicked(mouseX, mouseY);
+            int[] indexos = t.casellaClickada(mouseX, mouseY);
             int f = indexos[0];
             int c = indexos[1];
 
