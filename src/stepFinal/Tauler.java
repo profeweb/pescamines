@@ -58,11 +58,11 @@ public class Tauler {
         this.numCasellesVisibles = 0;
 
         // Crea les caselles del tauler
-        this.creaCaselles();
+        this.setCaselles();
     }
 
     // Crea les caselles del tauler
-    void creaCaselles(){
+    void setCaselles(){
         this.tauler = new Casella[this.num][this.num];
         for(int f = 0; f<this.num; f++){
             for(int c = 0; c<this.num; c++){

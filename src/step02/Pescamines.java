@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class Pescamines extends PApplet {
 
-    // Declara 3 variabes de classe Casella
+    // Declara 3 variables de classe Casella
     Casella c1, c2, c3;
 
     public void settings(){
