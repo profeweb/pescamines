@@ -30,7 +30,7 @@ public class Pescamines extends PApplet {
         t.setBombes(this);
 
         // Calcula el número de bombes al voltant de cada casella
-        t.calculateNumbers();
+        t.calculaNumBombes();
 
         // Inicialitza l'estat del joc
         gameOver = false;

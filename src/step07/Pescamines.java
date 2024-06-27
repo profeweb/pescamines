@@ -71,7 +71,7 @@ public class Pescamines extends PApplet {
         if (!gameOver) {
 
             // Obté fila i columna de la casella clicada
-            int[] indexos = t.casellaClickada(mouseX, mouseY);
+            int[] indexos = t.casellaClicada(mouseX, mouseY);
             int f = indexos[0];
             int c = indexos[1];
 
@@ -110,7 +110,7 @@ public class Pescamines extends PApplet {
         t.setBombes(this);
 
         // Calcula el número de bombes que envolten cada casella
-        t.calculateNumbers();
+        t.calculaNumBombes();
 
         // Carrega les imatges per representar les caselles
         t.setImatges(this);

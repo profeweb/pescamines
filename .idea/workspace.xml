@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1e1386-000a-495d-ae42-5ba4d7d264e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/step07/Casella.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step07/Pescamines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step07/Tauler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/destapat.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/destapada.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/square.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/tapada.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stepFinal/Pescamines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Pescamines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stepFinal/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step06/Pescamines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step06/Pescamines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step06/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step06/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step07/Pescamines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step07/Pescamines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step07/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step07/Tauler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +148,7 @@
       <workItem from="1719413339660" duration="4498000" />
       <workItem from="1719428118938" duration="9235000" />
       <workItem from="1719475062726" duration="8442000" />
-      <workItem from="1719498051017" duration="2537000" />
+      <workItem from="1719498051017" duration="5220000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1719298095982</created>
@@ -258,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719485410069</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="initial">
+      <created>1719500630265</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1719500630265</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

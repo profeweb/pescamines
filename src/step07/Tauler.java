@@ -113,7 +113,7 @@ public class Tauler {
 
 
     // Calcula els número de bombes al voltant de les caselles
-    void calculateNumbers(){
+    void calculaNumBombes(){
         for(int f = 0; f<this.num; f++){
             for(int c = 0; c<this.num; c++){
                 if(!this.tauler[f][c].esBomba){
@@ -133,7 +133,7 @@ public class Tauler {
 
 
     // Determina quina casella (fila, columna) ha sigut clicada
-    int[] casellaClickada(float mx, float my){
+    int[] casellaClicada(float mx, float my){
         int f = floor((my - this.y) / this.h);
         int c = floor((mx - this.x) / this.w);
         int[] indexos = {f, c};

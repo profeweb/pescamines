@@ -108,7 +108,7 @@ public class Tauler {
 
 
     // Calcula els número de bombes al voltant de les caselles
-    void calculateNumbers(){
+    void calculaNumBombes(){
         for(int f = 0; f<this.num; f++){
             for(int c = 0; c<this.num; c++){
                 if(!this.tauler[f][c].esBomba){
