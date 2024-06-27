@@ -71,12 +71,12 @@ public class Tauler {
         }
     }
 
-    // Setter de la propietat showAll
+    // Setter de la propietat descobrirTotes
     void setDescobrirTotes(boolean b){
         this.descobrirTotes = b;
     }
 
-    // Setter de les propietats imgTapada, imgDestapada
+    // Setter de les propietats imgTapada, imgDestapada i imgBomba
     void setImatges(PApplet p5){
         this.imgTapada    = p5.loadImage("square.png");
         this.imgDestapada = p5.loadImage("destapat.png");
@@ -170,9 +170,14 @@ public class Tauler {
     void descobreix(int f, int c){
 
         this.tauler[f][c].setDescobert(true);
+        // Actualitza els punts
         this.numPoints += this.tauler[f][c].numBombes;
+
+        // Actualitza el número de caselles descobertes
         this.numCasellesVisibles++;
 
+        // Comprova si ha de descobrir les caselles veïnes
+        
         int  minF = max(0, f-1);
         int  maxF = this.num;
 
