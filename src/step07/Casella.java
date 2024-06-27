@@ -1,0 +1,76 @@
+package step07;
+
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class Casella {
+
+    // Posició de la casella en el tauler
+    int fila, columna;
+
+    // Número de bombes al voltant de la casella
+    int numBombes;
+
+    // Estats de la casella
+    boolean esBomba, descobert;
+
+    // Constructor
+    Casella(int f, int c, boolean b) {
+        this.fila = f;
+        this.columna = c;
+        this.numBombes = 0;
+        this.esBomba = b;
+        this.descobert = false;
+    }
+
+    // Setter de la propietat esBomba
+    void setEsBomba(boolean b) {
+        this.esBomba = b;
+    }
+
+    // Setter de la propietat numBombes
+    void setNumBombes(int nb) {
+        this.numBombes = nb;
+    }
+
+    // Setter de la propietat visible
+    void setDescobert(boolean b) {
+        this.descobert = b;
+    }
+
+    // Dibuixa la casella
+    void display(PApplet p5, float xc, float yc, float w, float h, boolean descobrirTot, PImage imgTapada, PImage imgDestapada, PImage imgBomba) {
+
+        // Descobrir totes les caselles (final de joc)
+        if (descobrirTot) {
+
+            // Casella bomba
+            if (this.esBomba) {
+                p5.image(imgBomba, xc, yc, w, h);
+            }
+            // Casella sense bomba
+            else {
+                p5.image(imgDestapada, xc, yc, w, h);
+                p5.fill(0); p5.textSize(36); p5.textAlign(p5.CENTER);
+                p5.text(this.numBombes, xc + w / 2, yc + h / 2);
+
+            }
+        }
+        // Només caselles descobertes
+        else {
+
+            // Casella Descoberta
+            if (this.descobert) {
+                p5.image(imgDestapada, xc, yc, w, h);
+                p5.fill(0); p5.textSize(36); p5.textAlign(p5.CENTER);
+                p5.text(this.numBombes, xc + w / 2, yc + h / 2);
+
+            }
+            // Casella Tapada
+            else {
+                p5.image(imgTapada, xc, yc, w, h);
+            }
+
+        }
+    }
+}

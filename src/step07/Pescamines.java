@@ -1,4 +1,4 @@
-package stepFinal;
+package step07;
 
 import processing.core.PApplet;
 import processing.core.PFont;
@@ -12,7 +12,7 @@ public class Pescamines extends PApplet {
     // Estats del joc
     boolean gameOver, winner;
 
-    // Fonts dels textos
+    // Fonts del texte
     PFont font1, font2;
 
     // Sons dels clicks
@@ -23,12 +23,12 @@ public class Pescamines extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("stepFinal.Pescamines");
+        PApplet.main("step07.Pescamines");
     }
 
     public void setup(){
 
-        // Inicialitza el joc del pescamines
+        // Inicialitza el joc
         setGame();
 
         // Carrega la font per emprar en els textos
@@ -38,43 +38,22 @@ public class Pescamines extends PApplet {
         // Carrega els sons
         soBomba = new SoundFile(this, "explosio.wav");
         soClick = new SoundFile(this, "click.wav");
-    }
 
-    // Inicialitza el joc del pescamines
-    void setGame(){
-
-        // Crea el tauler
-        t = new Tauler(8, 10, 0, 70, width/8, (height-70)/8);
-
-        // Posiciona les bombes en el tauler
-        t.setBombs(this);
-
-        // Calcula el número de bombes que envolten cada casella
-        t.calculateNumbers();
-
-        // Carrega les imatges per representar les caselles
-        t.setImatges(this);
-
-        // Inicialitza l'estat del joc
-        gameOver = false;
-        winner = false;
     }
 
     public void draw(){
-        background(255);
+        background(220);
 
-        // Dibuixa el tauler de joc
+        // Dibuixa el tauler
         t.display(this, font1);
 
-        // Partida acabada
+        // Partida perduda
         if (gameOver) {
 
             fill(50, 150); noStroke();
             rect(0, 0, width, height);
 
-            fill(255);
-            textAlign(CENTER);
-            textFont(font2);
+            fill(255); textAlign(CENTER); textSize(48); textFont(font2);
             text("GAME OVER", width/2, height/2);
         }
         // Guanya jugador/a
@@ -83,9 +62,7 @@ public class Pescamines extends PApplet {
             fill(50, 150); noStroke();
             rect(0, 0, width, height);
 
-            fill(255);
-            textFont(font2);
-            textAlign(CENTER);
+            fill(255); textAlign(CENTER); textSize(48); textFont(font2);
             text("YOU WIN", width/2, height/2);
         }
     }
@@ -118,6 +95,29 @@ public class Pescamines extends PApplet {
                 }
             }
         }
+    }
+
+    // Inicialitza el joc del pescamines
+    void setGame(){
+
+        // Crea el tauler
+        t = new Tauler(8, 10, 0, 70, width/8, (height-70)/8);
+
+        // Crea les caselles del tauler
+        t.setCaselles();
+
+        // Posiciona les bombes en el tauler
+        t.setBombes(this);
+
+        // Calcula el número de bombes que envolten cada casella
+        t.calculateNumbers();
+
+        // Carrega les imatges per representar les caselles
+        t.setImatges(this);
+
+        // Inicialitza l'estat del joc
+        gameOver = false;
+        winner = false;
     }
 
     public void keyPressed(){

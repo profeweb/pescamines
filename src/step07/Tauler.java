@@ -1,4 +1,4 @@
-package stepFinal;
+package step07;
 
 import processing.core.PApplet;
 import processing.core.PFont;
@@ -49,21 +49,21 @@ public class Tauler {
         // Número de caselles sense bombes
         this.numCasellesPerObrir = (m*m) - nb;
 
-        // Totes les caselles tapades
+        // Totes les caselles tapades inicialment
         this.descobrirTotes = false;
 
-        // Estadístiques inicials
+        // Estadístiques inicials a zero
         this.numPoints = 0;
         this.numClicks = 0;
         this.numCasellesVisibles = 0;
 
-        // Crea les caselles del tauler
-        this.setCaselles();
     }
 
     // Crea les caselles del tauler
     void setCaselles(){
+
         this.tauler = new Casella[this.num][this.num];
+
         for(int f = 0; f<this.num; f++){
             for(int c = 0; c<this.num; c++){
                 this.tauler[f][c] = new Casella(f, c, false);
@@ -75,37 +75,6 @@ public class Tauler {
     void setDescobrirTotes(boolean b){
         this.descobrirTotes = b;
     }
-
-    // Setter de les propietats imgTapada, imgDestapada i imgBomba
-    void setImatges(PApplet p5){
-        this.imgTapada    = p5.loadImage("tapada.png");
-        this.imgDestapada = p5.loadImage("destapada.png");
-        this.imgBomba     = p5.loadImage("bomba.png");
-    }
-
-    // Actualitza el número de clicks
-    void updateClicks(){
-        this.numClicks++;
-    }
-
-
-    // Estableix la posició de les bombes en el tauler
-    void setBombs(PApplet p5){
-        int num = 0;
-        do {
-            // Fila i columna aleatòries
-            int rf = floor(p5.random(0, this.num));
-            int rc = floor(p5.random(0, this.num));
-
-            // Si ja no hi havia una bomba, l'hi posa i ho comptabilitza
-            if(this.tauler[rf][rc].esBomba == false){
-                this.tauler[rf][rc].setEsBomba(true);
-                num++;
-            }
-        } while(num<this.numBombes);
-        // Fins arribar ak número de bombes.
-    }
-
 
     // Dibuixa el tauler de joc
     void display(PApplet p5, PFont font){
@@ -121,9 +90,27 @@ public class Tauler {
         // Estadístiques del joc
         p5.fill(184, 147, 196);
         p5.rect(0, 0, p5.width, this.y);
-        p5. fill(0); p5.textSize(18); p5.textAlign(p5.CENTER, p5.CENTER); p5.textFont(font);
-        p5.text("POINTS: "+ this.numPoints+ " / CLICKS: "+ this.numClicks, p5.width/2, 30);
+        p5. fill(0); p5.textAlign(p5.CENTER); p5.textFont(font);
+        p5.text("POINTS: "+ this.numPoints+ " / CLICKS: "+ this.numClicks, p5.width/2, 50);
     }
+
+    // Estableix la posició de les bombes en el tauler
+    void setBombes(PApplet p5){
+        int num = 0;
+        do {
+            // Fila i columna aleatòries
+            int rf = floor(p5.random(0, this.num));
+            int rc = floor(p5.random(0, this.num));
+
+            // Si ja no hi havia una bomba, l'hi posa i ho comptabilitza
+            if(this.tauler[rf][rc].esBomba == false){
+                this.tauler[rf][rc].setEsBomba(true);
+                num++;
+            }
+        } while(num<this.numBombes);
+        // Fins arribar al número de bombes.
+    }
+
 
     // Calcula els número de bombes al voltant de les caselles
     void calculateNumbers(){
@@ -144,12 +131,18 @@ public class Tauler {
         }
     }
 
+
     // Determina quina casella (fila, columna) ha sigut clicada
     int[] casellaClickada(float mx, float my){
         int f = floor((my - this.y) / this.h);
         int c = floor((mx - this.x) / this.w);
         int[] indexos = {f, c};
         return indexos;
+    }
+
+    // Actualitza el número de clicks
+    void updateClicks(){
+        this.numClicks++;
     }
 
     // Actualitza el tauler en clickar a la fila f, columna c
@@ -191,4 +184,13 @@ public class Tauler {
             }
         }
     }
+
+    // Setter de les propietats imgTapada, imgDestapada i imgBomba
+    void setImatges(PApplet p5){
+        this.imgTapada    = p5.loadImage("tapada.png");
+        this.imgDestapada = p5.loadImage("destapada.png");
+        this.imgBomba     = p5.loadImage("bomba.png");
+    }
+
+
 }
